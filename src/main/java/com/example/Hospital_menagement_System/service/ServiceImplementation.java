@@ -1,6 +1,6 @@
 package com.example.Hospital_menagement_System.service;
 
-import com.example.Hospital_menagement_System.exception.PatientAlreadyExistException;
+
 import com.example.Hospital_menagement_System.exception.PatientNotFoundException;
 import com.example.Hospital_menagement_System.model.Patient;
 import com.example.Hospital_menagement_System.repository.hospitalRepository;
@@ -16,9 +16,9 @@ public class ServiceImplementation implements ServiceInterface{
     private final hospitalRepository  hospitalRepository;
     @Override
     public Patient addPatient(Patient patient) {
-        if(patientAlreadyExist(patient.getId())){
+        /*if(patientAlreadyExist(patient.getId())){
             throw  new PatientAlreadyExistException(patient.getId()+"patient already exist");
-        }
+        }*/
         return hospitalRepository.save(patient);
     }
 
